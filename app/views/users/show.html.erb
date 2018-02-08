@@ -1,0 +1,19 @@
+
+
+<% if flash[:notice] %>
+
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<% if current_user.admin %>
+  <h3>ADMIN</h3>
+<% end %>
+
+<p>Name: <%= current_user.name %></p>
+<p>Tickets: <%= current_user.tickets %></p>
+<p>Mood: <%= current_user.mood %></p>
+<p>Height: <%= pluralize current_user.height, 'inch' %></p>
+
+<%= link_to 'Edit User', edit_user_path(current_user) %>
+
+<%= link_to 'See attractions', attractions_path %>
