@@ -1,0 +1,14 @@
+<div class="info">
+  <p><strong>Name: </strong><%= @attraction.name %></p>
+  <p><strong>Total Number of Users: </strong><%= @attraction.users.count %></p>
+  <p><strong>Ticket Requirement: </strong><%= @attraction.tickets %></p>
+  <p><strong>Height Requirement: </strong><%= @attraction.min_height %> inches</p>
+  <p><strong>Nausea Rating: </strong><%= @attraction.nausea_rating %></p>
+  <p><strong>Happiness Rating: </strong><%= @attraction.happiness_rating %></p>
+  <% if @user.admin %>
+  <p> <a href="/attractions/<%= @attraction.id %>/edit">Edit Attraction</a></p>
+  <% else %>
+    <p><%= button_to "Go on this ride", "/rides?attraction_id=#{@attraction.id}", method: "POST" %></p>
+  <% end %>
+  <p> <%= link_to 'Back', attractions_path %> </p>
+</div>
