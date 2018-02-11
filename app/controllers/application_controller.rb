@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_log_in
-    redirect_to signin_path unless logged_in?
+    redirect_to root_path unless logged_in?
   end
 
 end
