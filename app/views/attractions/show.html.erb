@@ -1,0 +1,17 @@
+<h1>Attractions#show</h1>
+<p>Find me in app/views/attractions/show.html.erb</p>
+Name: <%= @attraction.name %> <br>
+Number of Users: <%= @attraction.users.size %><br>
+Tickets: <%= @attraction.tickets %><br>
+Height Requirement: <%= @attraction.min_height %><br>
+Happiness Rating: <%= @attraction.happiness_rating %><br>
+Nausea Rating: <%= @attraction.nausea_rating %><br>
+<% if is_admin %>
+  <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
+  <%= link_to "Back", attractions_path %>
+<% else %>
+  <%= form_tag rides_path, method: :post %>
+  <%= hidden_field_tag :user_id, current_user.id%>
+    <%= hidden_field_tag :attraction_id, @attraction.id%>
+  <%= submit_tag "Go on this ride" %>
+<% end %>

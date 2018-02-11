@@ -1,0 +1,16 @@
+<h1>User Page</h1>
+  <% if @user.admin %>
+    <h4><%= "ADMIN" %></h4>
+  <% end %>
+
+  <% if @message %>
+    <h4> <%= @message %></h4>
+  <% end %>
+
+<p>Name: <%= @user.name %></p>
+<p>Tickets: <%= @user.tickets %></p>
+<p>Mood: <%= @user.mood %></p>
+<p>Height: <%= @user.height %> inches</p>
+
+<%= link_to "Edit", edit_user_path(@user) %> <br>
+<%= link_to "See attractions", attractions_path %>

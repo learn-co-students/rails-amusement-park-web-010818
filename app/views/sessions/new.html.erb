@@ -1,0 +1,9 @@
+<%= form_tag signin_path %>
+
+Name: <br>
+<%= text_field_tag :'user[name]' %> </br>
+
+Password: <br>
+<%= password_field_tag :'user[password]' %></br>
+
+<%= submit_tag ("Sign In") %>
